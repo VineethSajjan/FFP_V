@@ -19,9 +19,11 @@ public class PointsService {
     @Autowired
     private PointsRepository pointsRepository;
     @Autowired
-    private DestinationRepository repo;
-    @Autowired
     private DestinationService service;
+    @Autowired
+    private MemberService memberService;
+    @Autowired
+    private TravelInfoService travelInfoService;
 
     public Points savePoints(Points points) {
         return pointsRepository.save(points);
@@ -52,7 +54,11 @@ public class PointsService {
 
 
     private void Insert(int memberId, int ticketId, int calculatedPoints) {
-
+        Points newPoints = new Points();
+        newPoints.setMember(memberService.getMemberById(memberId));
+        newPoints.setTravelInfo(travelInfoService.getTravelInfo(ticketId));
+        newPoints.setPoints(calculatedPoints);
+        pointsRepository.save(newPoints);
     }
 
     private int getDistance(int destId) {
@@ -89,6 +95,15 @@ public class PointsService {
     public void delete(int pointsId) {
         Points points = getPoints(pointsId);
         pointsRepository.delete(points);
+    }
+
+    public Points updatePoints(Points newPoints) {
+        Points oldPoints = getPoints(newPoints.getPointsId());
+        oldPoints.setTravelInfo(newPoints.getTravelInfo());
+        oldPoints.setMember(newPoints.getMember());
+        oldPoints.setPoints(newPoints.getPoints());
+        pointsRepository.save(oldPoints);
+        return oldPoints;
     }
 }
 

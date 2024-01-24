@@ -14,6 +14,7 @@ public class TravelInfoController {
     @Autowired
     private TravelInfoService travelInfoService;
 
+
     @PostMapping("/save")
     public TravelInfo save(@RequestBody TravelInfo travelInfo) {
         return travelInfoService.saveTravelInfo(travelInfo);

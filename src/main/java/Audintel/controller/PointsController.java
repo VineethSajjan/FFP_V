@@ -15,15 +15,16 @@ public class PointsController {
     @Autowired
     private PointsService pointsService;
 
+
     @PostMapping("/save")
     public Points savePoints(@RequestBody Points points) {
         return pointsService.savePoints(points);
     }
 
-   /* @PutMapping("/update")
-    public Points updatePoints(@RequestBody TravelInfo travel) {
-        return pointsService.updatePoints(travel);
-    }*/
+    @PutMapping("/update")
+    public Points updatePoints(@RequestBody Points points) {
+        return pointsService.updatePoints(points);
+    }
 
     @PatchMapping("/patch")
     public Points patchPoints(@RequestBody Points points) {

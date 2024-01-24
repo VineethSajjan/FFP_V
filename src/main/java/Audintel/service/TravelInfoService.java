@@ -15,7 +15,6 @@ public class TravelInfoService {
 
     @Autowired
     private TravelInfoRepository travelInfoRepository;
-    @Autowired
     private PointsService pointsService;
 
     public TravelInfo saveTravelInfo(TravelInfo travelInfo) {
