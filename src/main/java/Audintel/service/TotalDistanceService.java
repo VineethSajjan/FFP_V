@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Service
 public class TotalDistanceService {
@@ -48,17 +47,16 @@ public class TotalDistanceService {
 
     public String findAllTotalDistances() {
         List<TotalDistance> list = (List<TotalDistance>) repo.findAll();
-        String json = "";
+        StringBuilder json = new StringBuilder();
         for (TotalDistance td : list) {
             Gson g = new Gson();
-            json += g.toJson(td) + "\n";
+            json.append(g.toJson(td)).append("\n");
         }
-        return json;
+        return json.toString();
     }
 
-    public TotalDistance getTotalDistanceById(Integer id) {
-        Optional<TotalDistance> totalDistance = repo.findById(id);
-        return totalDistance.orElse(null);
+    public TotalDistance getTotalDistanceById(Integer memberId) {
+        return repo.findByMemberId(memberId).orElse(null);
     }
 
     public void deleteTotalDistance(Integer id) {
@@ -90,14 +88,15 @@ public class TotalDistanceService {
         else{
             long TotalDistance = d.getTotalDistance();
             TotalDistance+=distance;
-            int code = d.getCode();
-            Bonus(TotalDistance,memberId,code);
             d.setTotalDistance(TotalDistance);
-        repo.save(d);
+            int code = d.getCode();
+            int updatecode =Bonus(TotalDistance,memberId,code);
+            d.setCode(updatecode);
+            repo.save(d);
         }
     }
 
-    private void Bonus(long totalDistance, int memberId, int code) {
+    private int Bonus(long totalDistance, int memberId, int code) {
         int calculatedPoints=0;
 
         switch (code) {
@@ -128,10 +127,8 @@ public class TotalDistanceService {
                 }
                 break;
         }
-        TotalDistance d = getTotalDistanceById(memberId);
-        d.setCode(code);
-        repo.save(d);
-        service.changePoints(calculatedPoints,memberId);
+        service.changePoints(memberId,calculatedPoints);
+        return code;
     }
 
     private void Insert(int distance, int memberId, int code) {

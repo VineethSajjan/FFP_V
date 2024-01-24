@@ -24,3 +24,17 @@
 0:0:0:0:0:0:0:1 - - [24/Jan/2024:20:51:50 +0530] "PUT /TravelInfo/update HTTP/1.1" 500 129
 0:0:0:0:0:0:0:1 - - [24/Jan/2024:20:57:41 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
 0:0:0:0:0:0:0:1 - - [24/Jan/2024:20:58:31 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:02:55 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:16:45 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:17:30 +0530] "PUT /TravelInfo/update HTTP/1.1" 500 129
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:22:05 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:24:40 +0530] "PUT /TravelInfo/delete/101 HTTP/1.1" 405 130
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:25:17 +0530] "DELETE /TravelInfo/delete/101 HTTP/1.1" 200 5
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:25:23 +0530] "DELETE /TravelInfo/delete/102 HTTP/1.1" 200 5
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:25:27 +0530] "DELETE /TravelInfo/delete/103 HTTP/1.1" 200 5
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:26:03 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:26:12 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:26:56 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:27:24 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:29:04 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
+0:0:0:0:0:0:0:1 - - [24/Jan/2024:21:34:47 +0530] "PUT /TravelInfo/update HTTP/1.1" 200 132
