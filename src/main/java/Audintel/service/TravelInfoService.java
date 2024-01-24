@@ -15,6 +15,7 @@ public class TravelInfoService {
 
     @Autowired
     private TravelInfoRepository travelInfoRepository;
+    @Autowired
     private PointsService pointsService;
 
     public TravelInfo saveTravelInfo(TravelInfo travelInfo) {
@@ -39,6 +40,7 @@ public class TravelInfoService {
         oldTravelInfo.setPersonTravelling(newTravelInfo.isPersonTravelling());
         oldTravelInfo.setTotalMembers(newTravelInfo.getTotalMembers());
         travelInfoRepository.save(oldTravelInfo);
+        pointsService.PointsCalculation(oldTravelInfo);
         return oldTravelInfo;
     }
 

@@ -11,11 +11,9 @@ public class TravelInfo {
     private int ticketId;
 
     @Column(name = "member_id")
-    @JoinColumn(name = "member_id", referencedColumnName = "memberId")
     private int memberId;
 
     @Column(name = "dest_id")
-    @JoinColumn(name = "dest_id", referencedColumnName = "dest_Id")
     private int destId;
 
     @Column(name = "date")

@@ -3,7 +3,6 @@ package Audintel.service;
 import Audintel.dao.Destination;
 import Audintel.dao.Points;
 import Audintel.dao.TravelInfo;
-import Audintel.repository.DestinationRepository;
 import Audintel.repository.PointsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,8 @@ public class PointsService {
     @Autowired
     private MemberService memberService;
     @Autowired
-    private TravelInfoService travelInfoService;
+    private TotalDistanceService totalDistanceService;
+
 
     public Points savePoints(Points points) {
         return pointsRepository.save(points);
@@ -48,6 +48,8 @@ public class PointsService {
             calculated_points = total_persons * Distance / 60;
         }
         Insert(newObj.getMemberId(),newObj.getTicketId(),calculated_points);
+        memberService.changePoints(newObj.getMemberId(),calculated_points);
+        totalDistanceService.CalculateTotalDistance(Distance,newObj.getMemberId());
 
     }
 
@@ -55,8 +57,8 @@ public class PointsService {
 
     private void Insert(int memberId, int ticketId, int calculatedPoints) {
         Points newPoints = new Points();
-        newPoints.setMember(memberService.getMemberById(memberId));
-        newPoints.setTravelInfo(travelInfoService.getTravelInfo(ticketId));
+        newPoints.setMember(memberId);
+        newPoints.setTravelInfo(ticketId);
         newPoints.setPoints(calculatedPoints);
         pointsRepository.save(newPoints);
     }

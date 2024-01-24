@@ -12,6 +12,11 @@ public class TotalDistance {
 
     @Column(name = "total_distance")
     private long totalDistance;
+    @Column(name = "code")
+    private int code;
+
+    @Column(name = "member_id")
+    private int memberId;
 
     public int getId() {
         return id;
@@ -37,19 +42,11 @@ public class TotalDistance {
         this.code = code;
     }
 
-    public Member getMember() {
-        return member;
+    public int getMemberId() {
+        return memberId;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
     }
-
-    private int code;
-
-    @ManyToOne
-    @JoinColumn(name = "member_id", referencedColumnName = "memberId")
-    private Member member;
-
-
 }

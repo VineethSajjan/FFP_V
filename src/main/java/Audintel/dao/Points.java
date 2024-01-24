@@ -8,13 +8,12 @@ public class Points {
     @Column(name = "points_id")
     private int pointsId;
 
-    @ManyToOne
-    @JoinColumn(name = "member_id", referencedColumnName = "memberId")
-    private Member member;
 
-    @ManyToOne
-    @JoinColumn(name = "ticket_id", referencedColumnName = "ticket_id")
-    private TravelInfo travelInfo;
+    @Column(name = "member_id")
+    private int memberId;
+
+    @Column(name = "ticket_id")
+    private int ticketId;
 
     @Column(name = "points")
     private int points;
@@ -26,20 +25,20 @@ public class Points {
         this.pointsId = pointsId;
     }
 
-    public Member getMember() {
-        return member;
+    public int getMember() {
+        return memberId;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setMember(int memberId) {
+        this.memberId = memberId;
     }
 
-    public TravelInfo getTravelInfo() {
-        return travelInfo;
+    public int getTravelInfo() {
+        return ticketId;
     }
 
-    public void setTravelInfo(TravelInfo travelInfo) {
-        this.travelInfo = travelInfo;
+    public void setTravelInfo(int ticketId) {
+        this.ticketId = ticketId;
     }
 
     public int getPoints() {

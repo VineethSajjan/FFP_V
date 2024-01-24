@@ -1,6 +1,4 @@
 package Audintel.service;
-
-import Audintel.dao.Destination;
 import Audintel.dao.Member;
 import Audintel.repository.MemberRepository;
 import com.google.gson.Gson;
@@ -114,5 +112,13 @@ public class MemberService {
     public List<Member> getListMembers() {
         List<Member> ml = (List<Member>) repo.findAll();
         return ml;
+    }
+
+    public void changePoints(int memberId, int calculatedPoints) {
+        Member oldObj = getMemberById(memberId);
+        int points = oldObj.getPoints();
+        points =points+calculatedPoints;
+        oldObj.setPoints(points);
+        repo.save(oldObj);
     }
 }

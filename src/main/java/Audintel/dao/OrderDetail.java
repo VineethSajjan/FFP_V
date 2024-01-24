@@ -14,7 +14,6 @@ public class OrderDetail {
     private Integer id;
 
     @Column(name="order_id")
-    @JoinColumn(name = "order_id", referencedColumnName = "orderId")
     private int orderId;
 
     @Column(name = "item_name")
