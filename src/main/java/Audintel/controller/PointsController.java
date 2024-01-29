@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Points")
+@CrossOrigin("http://localhost:3000/")
 public class PointsController {
 
     @Autowired
@@ -41,6 +42,7 @@ public class PointsController {
         return pointsService.findList();
     }
 
+    @CrossOrigin("http://localhost:3000/")
     @GetMapping("/{pointsId}")
     public Points get(@PathVariable int pointsId) {
         return pointsService.getPoints(pointsId);

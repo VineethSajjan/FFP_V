@@ -14,6 +14,7 @@ public class MemberService {
     @Autowired
     MemberRepository repo;
     public Member saveMember(Member member) {
+
         return repo.save(member);
     }
 
@@ -120,5 +121,9 @@ public class MemberService {
         points =points+calculatedPoints;
         oldObj.setPoints(points);
         repo.save(oldObj);
+    }
+
+    public Member getMemberByEmail(String email) {
+        return repo.findByEmail(email);
     }
 }

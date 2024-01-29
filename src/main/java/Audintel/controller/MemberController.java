@@ -9,13 +9,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Member")
+@CrossOrigin(origins = "http://localhost:3000/")
 public class MemberController {
 
     @Autowired
     private MemberService memberService;
 
+//    @CrossOrigin(origins = "http://localhost:3000/")
     @PostMapping("/save")
     public Member saveMember(@RequestBody Member member) {
+        System.out.println("mid:"+member.toString());
         return memberService.saveMember(member);
     }
 
@@ -34,9 +37,14 @@ public class MemberController {
         return memberService.findAllMembers();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping("/{id}")
     public Member getMemberById(@PathVariable Integer id) {
         return memberService.getMemberById(id);
+    }
+
+    @GetMapping("/profile/{email}")
+    public Member getMemberByEmail(@PathVariable String email) {return memberService.getMemberByEmail(email);
     }
 
     @DeleteMapping("/delete/{id}")

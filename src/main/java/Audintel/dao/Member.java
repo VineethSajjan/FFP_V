@@ -1,6 +1,7 @@
 package Audintel.dao;
 
 import jakarta.persistence.*;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.sql.Date;
 
@@ -8,7 +9,8 @@ import java.sql.Date;
 public class Member {
 
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)  // This is for MySQL auto-increment
+//    @Column(name = "memberId",nullable = false)
     private int memberId;
 
     @Column
@@ -67,6 +69,31 @@ public class Member {
     @Column(length = 30)
     private String isActive;
 
+    public Member(int memberId, int memberCode, String firstName, String lastName, Date dob, String email, String phno, String pswd, int points, String hno, String street, String village, String city, String state, int pincode, String createdAt, String createdBy, String updatedAt, String updatedBy, String isActive) {
+        this.memberId = memberId;
+        this.memberCode = memberCode;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.email = email;
+        this.phno = phno;
+        this.pswd = pswd;
+        this.points = points;
+        this.hno = hno;
+        this.street = street;
+        this.village = village;
+        this.city = city;
+        this.state = state;
+        this.pincode = pincode;
+        this.createdAt = createdAt;
+        this.createdBy = createdBy;
+        this.updatedAt = updatedAt;
+        this.updatedBy = updatedBy;
+        this.isActive = isActive;
+    }
+
+    public Member() {
+    }
 
     public int getMemberId() {
         return memberId;
@@ -227,4 +254,32 @@ public class Member {
     public void setIsActive(String isActive) {
         this.isActive = isActive;
     }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "memberId=" + memberId +
+                ", memberCode=" + memberCode +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dob=" + dob +
+                ", email='" + email + '\'' +
+                ", phno='" + phno + '\'' +
+                ", pswd='" + pswd + '\'' +
+                ", points=" + points +
+                ", hno='" + hno + '\'' +
+                ", street='" + street + '\'' +
+                ", village='" + village + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", pincode=" + pincode +
+                ", createdAt='" + createdAt + '\'' +
+                ", createdBy='" + createdBy + '\'' +
+                ", updatedAt='" + updatedAt + '\'' +
+                ", updatedBy='" + updatedBy + '\'' +
+                ", isActive='" + isActive + '\'' +
+                '}';
+    }
 }
+
+
