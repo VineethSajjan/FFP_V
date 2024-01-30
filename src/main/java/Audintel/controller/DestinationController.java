@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000/")
 @RequestMapping("/Destination")
 public class DestinationController {
     @Autowired
@@ -25,7 +26,7 @@ public class DestinationController {
         return  service.patchDestination(dest);
     }
     @GetMapping("/findAll")
-    public String findAll(){
+    public List<Destination> findAll(){
         return service.findAll();
     }
 

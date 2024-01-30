@@ -47,16 +47,9 @@ public class DestinationService {
         return oldObj;
     }
 
-    public String findAll() {
+    public List<Destination> findAll() {
         List<Destination> dlist = (List<Destination>) repo.findAll();
-        StringBuilder json = new StringBuilder();
-        System.out.println(dlist);
-        for(Destination d: dlist){
-            //System.out.println(d.getDest_Id());
-            Gson g = new Gson();
-            json.append(g.toJson(d)).append("\n");
-        }
-        return json.toString();
+        return dlist;
     }
 
     public List<Destination> findList() {

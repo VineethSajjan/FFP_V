@@ -40,7 +40,7 @@ public class TravelInfoService {
         oldTravelInfo.setPersonTravelling(newTravelInfo.isPersonTravelling());
         oldTravelInfo.setTotalMembers(newTravelInfo.getTotalMembers());
         travelInfoRepository.save(oldTravelInfo);
-        pointsService.PointsCalculation(oldTravelInfo);
+//        pointsService.PointsCalculation(oldTravelInfo);
         return oldTravelInfo;
     }
 

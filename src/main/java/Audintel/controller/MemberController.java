@@ -39,13 +39,17 @@ public class MemberController {
 
     @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping("/{id}")
-    public Member getMemberById(@PathVariable Integer id) {
+    public Member getMemberById(@PathVariable Integer id)
+    {
         return memberService.getMemberById(id);
     }
 
-    @GetMapping("/profile/{email}")
-    public Member getMemberByEmail(@PathVariable String email) {return memberService.getMemberByEmail(email);
-    }
+//    @CrossOrigin(origins = "http://localhost:3000/")
+//    @GetMapping("/profile/{id}")
+//    public Member getMemberByProfileId(@PathVariable Integer id)
+//    {
+//        return memberService.getMemberById(id);
+//    }
 
     @DeleteMapping("/delete/{id}")
     public void deleteMember(@PathVariable Integer id) {
