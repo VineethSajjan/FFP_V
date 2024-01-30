@@ -90,8 +90,8 @@ public class PointsService {
         return json.toString();
     }
 
-    public List<Points> findList() {
-        return (List<Points>) pointsRepository.findAll();
+    public List<Points> findList(int memberId) {
+        return  pointsRepository.findByMemberId(memberId);
     }
 
     public void delete(int pointsId) {
