@@ -43,9 +43,9 @@ public class PointsController {
     }
 
     @CrossOrigin("http://localhost:3000/")
-    @GetMapping("/{pointsId}")
-    public Points get(@PathVariable int pointsId) {
-        return pointsService.getPoints(pointsId);
+    @GetMapping("/{ticketId}")
+    public Points get(@PathVariable int ticketId) {
+        return pointsService.getPoints(ticketId);
     }
 
     @DeleteMapping("/delete/{pointsId}")

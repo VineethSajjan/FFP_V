@@ -40,11 +40,11 @@ public class TravelInfoService {
         oldTravelInfo.setPersonTravelling(newTravelInfo.isPersonTravelling());
         oldTravelInfo.setTotalMembers(newTravelInfo.getTotalMembers());
         travelInfoRepository.save(oldTravelInfo);
-<<<<<<< HEAD
-//        pointsService.PointsCalculation(oldTravelInfo);
-=======
+
+    // pointsService.PointsCalculation(oldTravelInfo);
+
         //pointsService.PointsCalculation(oldTravelInfo);
->>>>>>> origin/master
+
         return oldTravelInfo;
     }
 

@@ -29,8 +29,8 @@ public class PointsService {
         return pointsRepository.save(points);
     }
 
-    public Points getPoints(int pointsId) {
-        Optional<Points> points = pointsRepository.findById(pointsId);
+    public Points getPoints(int ticketId) {
+        Optional<Points> points = pointsRepository.findByticketId(ticketId);
         return points.orElse(null);
     }
 
