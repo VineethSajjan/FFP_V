@@ -37,9 +37,9 @@ public class PointsController {
         return pointsService.findAll();
     }
 
-    @GetMapping("/list")
-    public List<Points> getList() {
-        return pointsService.findList();
+    @GetMapping("list/{memberId}")    //to print points
+    public List<Points> getList(@PathVariable int memberId) {
+        return pointsService.findList(memberId);
     }
 
     @CrossOrigin("http://localhost:3000/")
@@ -52,4 +52,5 @@ public class PointsController {
     public void delete(@PathVariable int pointsId) {
         pointsService.delete(pointsId);
     }
+
 }

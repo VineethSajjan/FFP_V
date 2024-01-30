@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 29-Jan-2024 09:57:12.372 INFO [Thread-4] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcherServlet'
 29-Jan-2024 09:57:12.374 INFO [Thread-4] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
 29-Jan-2024 09:57:24.763 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
@@ -8,3 +9,28 @@
 29-Jan-2024 12:24:32.439 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
 29-Jan-2024 12:24:41.153 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
 29-Jan-2024 12:28:24.052 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcherServlet'
+=======
+29-Jan-2024 09:55:16.166 INFO [Thread-3] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcherServlet'
+29-Jan-2024 09:55:16.166 INFO [Thread-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+29-Jan-2024 09:55:33.362 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+29-Jan-2024 09:55:36.636 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+29-Jan-2024 10:02:43.355 INFO [Thread-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+29-Jan-2024 18:15:22.932 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+29-Jan-2024 18:15:26.147 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+29-Jan-2024 18:16:22.385 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+29-Jan-2024 18:16:25.542 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+29-Jan-2024 18:19:57.664 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+29-Jan-2024 18:20:00.715 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+29-Jan-2024 18:23:55.524 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+29-Jan-2024 18:23:59.148 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+29-Jan-2024 18:24:59.516 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+29-Jan-2024 18:25:02.637 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+29-Jan-2024 18:25:43.885 INFO [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcherServlet'
+29-Jan-2024 18:26:27.740 INFO [Thread-4] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcherServlet'
+29-Jan-2024 18:26:27.740 INFO [Thread-4] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+29-Jan-2024 18:26:35.447 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+29-Jan-2024 18:26:38.786 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+29-Jan-2024 18:26:54.715 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcherServlet'
+29-Jan-2024 18:27:58.970 INFO [Thread-4] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'dispatcherServlet'
+29-Jan-2024 18:27:58.971 INFO [Thread-4] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+>>>>>>> origin/master

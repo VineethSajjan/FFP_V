@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 25-Jan-2024 09:41:52.670 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
 25-Jan-2024 09:41:57.032 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
 25-Jan-2024 09:46:04.583 INFO [Thread-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
@@ -103,3 +104,11 @@
 25-Jan-2024 17:26:58.420 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
 25-Jan-2024 17:27:06.873 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
 25-Jan-2024 17:27:29.737 INFO [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring DispatcherServlet 'dispatcherServlet'
+=======
+25-Jan-2024 10:57:45.267 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+25-Jan-2024 10:57:47.569 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+25-Jan-2024 10:58:12.312 INFO [Thread-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+25-Jan-2024 10:58:36.352 INFO [main] org.apache.catalina.core.ApplicationContext.log 2 Spring WebApplicationInitializers detected on classpath
+25-Jan-2024 10:58:38.629 INFO [main] org.apache.catalina.core.ApplicationContext.log Initializing Spring embedded WebApplicationContext
+25-Jan-2024 10:59:21.678 INFO [Thread-3] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext
+>>>>>>> origin/master
