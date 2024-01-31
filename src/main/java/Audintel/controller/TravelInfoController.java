@@ -50,4 +50,10 @@ public class TravelInfoController {
     public void delete(@PathVariable int ticketId) {
         travelInfoService.delete(ticketId);
     }
+    @CrossOrigin(origins = "http://localhost:3000/")
+    @PostMapping("/validate/{ticketId}")
+    public TravelInfo validation(@PathVariable int ticketId){
+        return travelInfoService.validation(ticketId);
+    }
+
 }

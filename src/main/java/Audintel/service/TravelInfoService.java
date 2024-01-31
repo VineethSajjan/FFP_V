@@ -1,5 +1,6 @@
 package Audintel.service;
 
+import Audintel.dao.Booking;
 import Audintel.dao.TravelInfo;
 import Audintel.repository.TravelInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class TravelInfoService {
     private TravelInfoRepository travelInfoRepository;
     @Autowired
     private PointsService pointsService;
+    @Autowired
+    private BookingService service;
 
     public TravelInfo saveTravelInfo(TravelInfo travelInfo) {
         return travelInfoRepository.save(travelInfo);
@@ -26,11 +29,30 @@ public class TravelInfoService {
         Optional<TravelInfo> travelInfo = travelInfoRepository.findById(ticketId);
         return travelInfo.orElse(null);
     }
+    public TravelInfo validation(int ticketId){
+        if(service.validate(ticketId)){
+            return update(ticketId);
+        }
+        return null;
+    }
+
+    private TravelInfo update(int ticketId) {
+       Booking obj = service.getObject(ticketId);
+       TravelInfo newObj = new TravelInfo();
+       newObj.setTicketId(obj.getBookingId());
+       newObj.setDate(obj.getDate());
+       newObj.setPersonTravelling(obj.getPersonTravelling());
+       newObj.setDestId(obj.getDestId());
+       newObj.setMemberId(obj.getMemberId());
+       newObj.setTotalMembers(obj.getTotalMembers());
+       travelInfoRepository.save(newObj);
+       pointsService.PointsCalculation(newObj);
+       return newObj;
+    }
 
     public TravelInfo updateTravelInfo(TravelInfo newTravelInfo) {
         if(getTravelInfo(newTravelInfo.getTicketId())==null){
             travelInfoRepository.save(newTravelInfo);
-            pointsService.PointsCalculation(newTravelInfo);
             return newTravelInfo;
         }
         TravelInfo oldTravelInfo = getTravelInfo(newTravelInfo.getTicketId());
@@ -40,11 +62,6 @@ public class TravelInfoService {
         oldTravelInfo.setPersonTravelling(newTravelInfo.isPersonTravelling());
         oldTravelInfo.setTotalMembers(newTravelInfo.getTotalMembers());
         travelInfoRepository.save(oldTravelInfo);
-
-    // pointsService.PointsCalculation(oldTravelInfo);
-
-        //pointsService.PointsCalculation(oldTravelInfo);
-
         return oldTravelInfo;
     }
 
